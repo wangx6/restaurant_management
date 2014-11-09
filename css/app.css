@@ -1,0 +1,71 @@
+h3
+{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    color: #09c;
+    font-weight: bold;
+}
+.btn{
+    min-width: 100px;
+}
+.container
+{
+    margin-top: 20px;
+}
+.table-layout{
+    float:left;
+    width: 22.5%;
+    text-align: center;
+    background:#333;
+    color: #fff;
+    margin-right: 2%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.table-layout:hover, .menu-line:hover
+{
+    cursor: pointer;
+}
+.order-line{
+    background-color: #c43c35;
+    color: #fff;
+    font-size: 12px;
+}
+.table-info{
+    min-height: 400px;
+    background-color: #eee;
+}
+.menu-table
+{
+    background-color:#b9def0;
+}
+.table-availibility-Free{
+
+}
+.table-availibility-Engaged{
+    background-color: #c43c35;
+}
+.table-availibility-Reserved{
+    background-color: #008800;
+}
+.is-active-true{
+    background-color: #31b0d5;
+}
+.dish-delete-btn{
+    float:right;
+}
+.clock-container{
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+#main-view2
+{
+    width: 100%;
+}
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: #c43c35;
+    position: absolute;
+}
+

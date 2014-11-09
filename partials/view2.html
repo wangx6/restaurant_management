@@ -1,0 +1,49 @@
+<div class="container" id="main-view2">
+
+
+    <div class="row-fluid col-xs-3">
+        <h3>Tables</h3>
+        <div data-ng-repeat="table in tables"  data-ng-click="showTableDetail(table)" class="table-layout is-active-{{table.isActive}} table-availibility-{{table.tableAvailibility}}">
+           {{table.tableName}}<br> {{table.tableAvailibility}}
+        </div>
+    </div>
+
+    <div class="row-fluid col-xs-4" data-ng-repeat="table in tables" data-ng-show="table.isActive">
+
+        <h3>Table {{ table.tableName }} is {{ table.tableAvailibility }}</h3>
+        <div class="table-info">
+            <table class="table">
+                <tr class="order-line" data-ng-repeat="tbi in table.tableBillItems">
+                    <td>
+                        {{ tbi.itemName }} {{ tbi.itemPrice | currency }} X {{tbi.itemQuantity}}
+                        <button class="dish-delete-btn" data-ng-click="removeDish(table,tbi)"> DEL</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h3>Subtotal: {{ table.tableSubtotal | currency }}</h3><button class="btn btn-primary " data-ng-click="payBill(table)">Pay</button>
+    </div>
+
+    <div class="row-fluid col-xs-4" data-ng-repeat="table in tables" data-ng-show="table.isActive">
+        <h3>Menu</h3>
+        <table class="table table-striped">
+            <tbody>
+            <tr data-ng-repeat="m in table.menu" data-ng-click="addDishToBill(table,m)" class="menu-line">
+                <td style="width: 80%;">{{ m.itemName | capitalized }}</td>
+                <td style="width:20%;">{{ m.itemPrice | currency }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-xs-1">
+
+        <h3>Settings</h3>
+        <div class="clock-container"><strong>{{ time }}</strong></div>
+        <a class="btn btn-primary" data-ng-click="shiftComplete()">Checkout</a>
+        <br><br>
+        <button class="btn btn-primary">Setting</button>
+        <br><br>
+        <button class="btn btn-primary">Report</button>
+
+    </div>
+</div>
